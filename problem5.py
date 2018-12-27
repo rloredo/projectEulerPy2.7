@@ -22,6 +22,7 @@ def findSmallesDivisible(n):
             i = 2
 #print findSmallesDivisible(20)
 
+import math as m
 
 #Con factorizacion por primos
 def isPrime(n):

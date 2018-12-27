@@ -14,3 +14,9 @@ class stack:
 
 	def unpile(self):
 		self.stack.pop()
+
+	def firstN(self, x):
+		return self.stack[0:x]
+
+	def lastN(self, x):
+		return self.stack[-x:len(self.stack)]

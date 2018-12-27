@@ -32,6 +32,7 @@ def encontrarDivisores(n):
 
         return divisoresPri
 
+import math as m
 
 #si bien ponen esta solucion, puede no ser, porque en realidad encuentra el minimo y no sirve para el maximo
 def encontrarDivisoresSq(n):
