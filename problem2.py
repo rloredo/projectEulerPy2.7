@@ -24,7 +24,7 @@ print sum(crearFiboParMenorA(4000000))
 
 
 #Otras cosas para el razonamiento
-# Encontrar el n termino  de la secuencia
+# Encontrar el n termino  de la secuencia. Recursivo
 def fiboRec(n):
     if n == 0:
         n = 0
@@ -34,7 +34,7 @@ def fiboRec(n):
         n = fiboRec(n-1) + fiboRec(n-2)
     return n
 
-# Encontrar el n termino par de la secuencia
+# Encontrar el n termino par de la secuencia. Recursivo
 def fiboRecPares(n):
     if n == 0:
         n = 2

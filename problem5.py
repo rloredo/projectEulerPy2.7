@@ -24,22 +24,18 @@ def findSmallesDivisible(n):
 
 
 #Con factorizacion por primos
-import math as m
-
 def isPrime(n):
-    esPrimo = False
-    j = 2
-
-    while n % j != 0 and j != m.sqrt(n):
-        if j == 2:
-            j = 3
-        else:
-            j = j + 2
-
-    if j == n:
-        esPrimo = True
-
-    return esPrimo
+    if n == 2:
+        return True
+    if n % 2 == 0 or n < 2:
+        return False
+    limit = int(n ** 0.5) + 1
+    i = 3
+    while i < limit:
+        if n % i == 0:
+            return False
+        i = i + 2
+    return True
 
 #Asi como esta no funciona cuando el numero es un cuadrado, V2 si funciona
 def findSmallDivByFact(n):
@@ -99,6 +95,7 @@ def findSmallDivByFactV2(n):
         primosHastaN.remove(primosHastaN[0])
         noPrimoGrande = noPrimoGrande - 1
     listaFinal =  listaFinal + primosHastaN
+    #Usamos reduce para multiplicar por simplicidad. Deberia hacerlo con whiles
     return reduce(lambda x, y: x*y, listaFinal)
 
 print 'de 16', findSmallDivByFactV2(16)

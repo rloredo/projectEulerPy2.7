@@ -1,21 +1,17 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
-import math as m
-
 def isPrime(n):
-    esPrimo = False
-    j = 2
-
-    while n % j != 0 and j != m.sqrt(n):
-        if j == 2:
-            j = 3
-        else:
-            j = j + 2
-
-    if j == n:
-        esPrimo = True
-
-    return esPrimo
+    if n == 2:
+        return True
+    if n % 2 == 0 or n < 2:
+        return False
+    limit = int(n ** 0.5) + 1
+    i = 3
+    while i < limit:
+        if n % i == 0:
+            return False
+        i = i + 2
+    return True
 
 
 #Esta es la solucion pero hay que optimizar porque tarda mucho
@@ -37,7 +33,7 @@ def encontrarDivisores(n):
         return divisoresPri
 
 
-#si bien ponen esta solucion, puede no ser, porque en realidad encuentra el minimo no sirve para el maximo
+#si bien ponen esta solucion, puede no ser, porque en realidad encuentra el minimo y no sirve para el maximo
 def encontrarDivisoresSq(n):
         j = int(round(m.sqrt(n),0))
         if j % 2 == 0:

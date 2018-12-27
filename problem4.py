@@ -29,7 +29,7 @@ def esPalin(n):
         else:
             return False
 
-
+#n indica el número de dígitos, para este problema n = 3
 def buscarLargerPalinProd(n):
     j = ''
     i = 0
