@@ -8,17 +8,24 @@
 def isPythTripl(a,b,c):
     return a**2 + b**2 == c**2 and (a < b and b < c)
 
-print isPythTripl(3,4,5)
-
-
 #Encontrar triplete que sume n
 def findPyth(n):
-    for a in range(1, n):
-        for b in range(a, n - a):
+    a = 1
+    b = 1
+    # Iterar a y b
+    while a < n:
+        while b < n - a:
+            # Encontrar c como la resta
             c = n - a - b
+            # Si c es < b no cumple condicion y no vale la pena chequear
             if c < b:
                 break
+            #Chequear si es triplete
             if isPythTripl(a, b, c):
-                return str(a) + ' + ' + str(b) + ' + ' + str(c) + ' = ' + str(a+b+c) + '  producto: ' + str(a*b*c) 
+                return str(a) + ' + ' + str(b) + ' + ' + str(c) + ' = ' + str(a+b+c) + '  producto: ' + str(a*b*c)
+            b = b + 1
+        a = a + 1
+        b = a
+
 
 print findPyth(1000)
